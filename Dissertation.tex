@@ -1,0 +1,243 @@
+\documentclass[11pt, oneside]{article}   	
+\usepackage{geometry} 
+\usepackage{imakeidx}
+ \geometry{
+ a4paper,
+ left=10mm,
+ top=20mm,
+ right=10mm,
+ bottom=20mm
+ }               						
+\geometry{letterpaper}                   		
+\usepackage{graphicx}				
+\usepackage{amsmath}						
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[defaultlines=3, all]{nowidow}
+\usepackage{courier}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{imakeidx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[r]{\leftmark}
+\fancyhead[l]{Candidate Number: 133889}
+\fancyfoot[c]{\thepage}
+
+\title{Searches for supersymmetry at the ATLAS detector: examining $WZ$ mediated final states with missing transverse momentum and three leptons in $pp$ collisions at $\sqrt{s}=13$ TeV}
+\author{Candidate Number: 133889 \\ Supervisor: Prof Antonella De Santo \\ \\ Due May 2018\\ \\ Word Count: $\sim<$number$>$}
+\date{}
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\textwidth]{Pictures/diss.png} 
+   \label{fig:example}
+\end{figure}
+
+\newpage
+
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor sollicitudin risus sed tincidunt. Duis venenatis posuere enim, nec dignissim justo luctus quis. Curabitur semper pharetra dolor sit amet posuere. Ut dictum nec diam sit amet tristique. Ut volutpat viverra felis vel laoreet. Cras eget aliquam nisl, nec vehicula mauris. Nullam gravida commodo venenatis. Curabitur vitae justo orci. Vivamus urna nisi, tempus a iaculis a, iaculis eu lorem. In a rutrum ipsum. Nam sollicitudin nisi a velit ultrices, sed molestie odio sollicitudin. Etiam dapibus lacus nec justo ultrices consectetur. Proin elit dolor, pretium eget sapien molestie, ultrices vehicula leo. Fusce pretium interdum pulvinar. 
+\end{abstract}
+
+\section*{Preface}
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor sollicitudin risus sed tincidunt. Duis venenatis posuere enim, nec dignissim justo luctus quis. Curabitur semper pharetra dolor sit amet posuere. Ut dictum nec diam sit amet tristique. Ut volutpat viverra felis vel laoreet. Cras eget aliquam nisl, nec vehicula mauris. Nullam gravida commodo venenatis. Curabitur vitae justo orci. Vivamus urna nisi, tempus a iaculis a, iaculis eu lorem. In a rutrum ipsum. Nam sollicitudin nisi a velit ultrices, sed molestie odio sollicitudin. Etiam dapibus lacus nec justo ultrices consectetur. Proin elit dolor, pretium eget sapien molestie, ultrices vehicula leo. Fusce pretium interdum pulvinar.
+
+Proin a lacus quis nisi mattis semper. Curabitur ac tincidunt sapien. Ut vitae lorem vel nibh aliquam blandit. Sed commodo, orci at dapibus ullamcorper, augue mi ultricies turpis, non varius massa augue hendrerit justo. Proin posuere mauris non suscipit vulputate. Sed at interdum massa. Cras sagittis odio a libero molestie ultricies. Pellentesque convallis purus dui, nec luctus ex congue a.
+
+Maecenas sed quam dolor. Cras eu justo id metus ornare ornare. Maecenas mattis, nisl a mollis convallis, ante ex egestas mauris, id vehicula lorem metus et nisl. Aliquam erat volutpat. Proin et felis vehicula, luctus turpis in, vestibulum nibh. In mollis eget ex et vehicula. Cras egestas urna eget quam finibus varius. Nullam faucibus, purus non vehicula mattis, augue purus congue nisi, efficitur porttitor diam libero in nunc. Aenean congue posuere tempor. Praesent bibendum bibendum augue, ac molestie sem fringilla sit amet. Donec auctor quam non lorem gravida viverra. Integer hendrerit quis lorem non consectetur. 
+\newpage
+\clearpage
+\tableofcontents
+
+\clearpage
+\listoffigures
+
+\clearpage
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+\section{Introduction and Background}
+\subsection{The Standard Model of particle physics}
+The current theory of particle physics is described by the Standard Model, which classifies the elementary particles, including the quarks and leptons, and three of the four fundamental forces.
+These forces include the strong force, responsible for holding quarks and nuclei together, the weak force responsible for nuclear decay, and the electromagnetic force which allows the electron to orbit atomic nuclei and allows for most of the luxuries of modern life.
+
+The first step towards the theory of the Standard Model was motivated by Sheldon Glashow's unification of the electromagnetic and weak forces \cite{glashow1961partial}, now referred to as the electroweak theory \cite{glashow1959renormalizability, salam1994weak}.
+Neutral weak currents mediated by Z boson exchange discovered at CERN in 1973 further implied the validity of the electroweak theory, and so it became well accepted as a fundamental theory of particle physics \cite{hasert1973search, hasert1973searcha, hasert1974observation, haidt2004discovery}.
+Most recently, with the discovery of the Higgs boson in the LHC at CERN, the standard model was updated such that it describes the Higg's mechanism which gives rise to the masses of the fundamental particles \cite{aad2012observation, chatrchyan2012observation, higgs1964broken, englert1964broken, anderson1963plasmons}.
+The physical theory describing the strong interaction, or quantum chromodynamics, was developed into its accepted format in the early 1970's.
+QCD was perpetuated by the advent and discovery of asymptotic freedom in non-abelian gauge theories, which describes how the force between two particles becomes asymptotically weaker at high energies, and correspondingly at the associated decreased length scale \cite{gross1973ultraviolet, politzer1973reliable}.
+As previously mentioned there is a missing element in the standard model, gravity.
+Currently, efforts to combine general relativity with quantum mechanics do not give us a complete theory of quantum gravity. However, mathematical frameworks such as string theory and quantum loop gravity aim to provide us with a quantum theory of gravity.
+It is novel theories such as these that imply incompleteness and motivate us to search for theories beyond the standard model, such that we can more fully and more accurately describe nature.
+
+\subsection{Motivation for Super Symmetry}
+
+Supersymmetry (SUSY) was first conjectured in the early 1970's, and is a generalisation of space-time symmetries.
+A major feature of SUSY as a theory is the prediction of sister particles to those found in the Standard Model (SM) with spin differing by exactly one half \cite{gol1989extension, volkov1973neutrino, wess1974supergauge, wess1974supergauge1, ferrara1974supergauge, salam1974super}.
+This means that for every fermion, such as the quarks and lepton, there is a bosonic partner, and for every boson, such as the force carriers, there is a fermionic partner.
+A feature of SUSY is its dependence on $R$-parity. 
+SUSY particles have $R_{p}=-1$ where as SM particles carry $R_{p}=1$, therefore, SUSY particles must be produced in pairs assuming $R$-parity is not a broken symmetry of nature.
+
+SUSY offers a suitable candidate for dark matter in the form of the lightest supersymmetric particle (LSP), $\tilde\chi^{0}_{1}$.
+Due to conservation of $R$-parity one can be convinced that the LSP must be stable, if not it would have to decay into SM particles and violate $R$-parity conservation.
+It is known that the LSP is electrically neutral and has mass of the order TeV, therefore it fits the criteria of being a massive particle that does not interact electromagnetically; all desirable features of a theory of dark matter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\section{Cut Flow Analysis}
+
+\clearpage
+\section{Other thing I might do}
+
+\clearpage
+\section{Another thing I might do}
+
+\clearpage
+\section{Conclustions}
+
+\clearpage
+\section{Acknowledgements}
+
+\clearpage
+\bibliographystyle{ieeetr}
+\bibliography{Dissertation}
+
+
+
+
+\clearpage
+\appendix
+\section{Images}
+\section{tables}
+
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{l | c}
+\toprule
+Cut 				& Event selection \\
+\hline
+Lepton Selection 	& $\ell^{+} \ell^{-} \ell$ \\
+\hline
+\hline
+number b jets 		& $=\ 0$ \\
+\hline
+$p_{T}^{\ell_{1}}$	& $> 25$ GeV \\
+\hline
+$p_{T}^{\ell_{2}}$	& $> 25$ GeV \\
+\hline
+$p_{T}^{\ell_{3}}$	& $> 20$ GeV \\
+\hline
+$m_{SFOS}^{min}$ 	& $>20\textrm{, }\in \left[81.2 \textrm{, } 101.2\right]$ GeV \\
+\hline 
+$m_{3\ell}$		& $> 20$ GeV \\
+\hline
+$E_{T}^{miss}$		& $> 60$ GeV \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Baseline and cleaning cuts for event selection in on Z mass shell analysis}
+\label{basepluscleaningonZ}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{l | c}
+\toprule
+Cut 				& Event selection \\
+\hline
+Lepton Selection 	& $\ell^{+} \ell^{-} \ell$ \\
+\hline
+\hline
+number b jets 		& $=\ 0$ \\
+\hline
+$p_{T}^{\ell_{1}}$	& $> 25$ GeV \\
+\hline
+$p_{T}^{\ell_{2}}$	& $> 25$ GeV \\
+\hline
+$p_{T}^{\ell_{3}}$	& $> 20$ GeV \\
+\hline
+$m_{SFOS}^{min}$ 	& $>20\textrm{, }\notin \left[81.2 \textrm{, } 101.2\right]$ GeV \\
+\hline 
+$m_{3\ell}$		& $> 20$ GeV \\
+\hline
+$E_{T}^{miss}$		& $> 60$ GeV \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Baseline and cleaning cuts for event selection in off Z mass shell analysis}
+\label{basepluscleaningonZ}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{c | c | c | c | c | c}
+\toprule
+Bin & nJets & $E_{T}^{miss}$ & $m_{T}^{min}$ & $p_{T}^{1st\ jet}$ & $p_{T}^{3rd\ lep}$ \\
+\hline \hline
+1 (0Ja) & $0$ & $60-120$ & $110-\infty$ & - & - \\
+\hline
+2 (0Jb) & $0$ & $120-170$ & & - & - \\
+\hline
+3 (0Jc) & $0$ & $170-\infty$ & & - & - \\
+\hline \hline
+4 (1Ja) & $>0$ & $120-200$ & $100-\infty$ & $70-\infty$ & - \\
+\hline
+5 (1Jb) & $>0$ & $200-\infty$ & $110-160$ & - & - \\
+\hline
+6 (1Jc) & $>0$ & & $160-\infty$ & - & $35 - \infty$ \\
+\bottomrule
+\end{tabular}
+\caption{Summary of the optimal bin edges for the binned approach for SR3$\ell$ targeting C1N2 via WZ models.}
+\end{center}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
