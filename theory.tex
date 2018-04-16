@@ -1,25 +1,4 @@
-\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
-\usepackage{feynman}
-\usepackage{slashed}
-\usepackage{import}
-\import{}{packages.tex}
-\title{Brief Article}
-\author{The Author}
-%\date{}							% Activate to display a given date or no date
-
-\begin{document}
-
-
-
 \section{The Standard Model of Particle Physics}
-\fancyhead[r]{THE STANDARD MODEL}
 The Standard Model (SM) of particle physics classifies the elementary particles, as well as three of the four fundamental forces of nature \cite{oerter2006theory}. 
 These forces include electromagnetism, the weak interaction, and the strong interaction.
 The nature by which these fundamental facets of the universe interact is described through the mathematical formalisms of quantum field theory.
@@ -38,6 +17,7 @@ From this we get, in total, twelve gauge fields required to write a gauge invari
 In conjunction with nineteen numerical constants, given in table \ref{tab:parameters}, we are furnished with the ability to write down a gauge invariant SM Lagrangian
 
 \subsection{The Electroweak Interaction}
+\label{subsec:EWInteraction}
 The Electroweak theory \cite{glashow1959renormalizability} describes the unification of the electromagnetic and weak interactions, described mathematically by an $SU(2) \times U(1)$ gauge symmetry.
 Electroweak theory introduces two complications to the SM.
 As stated previously, four gauge fields are included from the $SU(2)$ and $U(1)$ gauges, however, to preserve gauge invariance they are required to be massless.
@@ -143,7 +123,7 @@ A visual representation of the quark and gluon colour charge combinations is giv
 
 \begin{figure}[H] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=.5\textwidth]{../Pictures/SU(3).png} 
+   \includegraphics[width=.5\textwidth]{Pictures/SU(3).png} 
    \caption{A visual representation of the colour charge combinations allowed for quarks and gluons}
    \label{fig:colourCharge}
 \end{figure}
@@ -222,15 +202,15 @@ These corrections include those shown in figure \ref{fig:HiggsCorrections}
 \begin{align}
 m_{\textrm{h, physical}}^{2} \approx m_{h}^{2} + \frac{C}{16 \pi} \Lambda^{2}
 \end{align}
+
 where $C$ is an amalgamation of SM coupling constants.
 A full breakdown is given in \cite{baer2015supergravity}.
 The issue that arises is that when calculating the parameter $\Lambda$, quantum corrections pile up causing $\Lambda$ to be of the order of the Planck scale.
 The result of this is that the Higgs mass is predicted to be of the order of the Planck scale, whereas experiment shows that it is actually of the order of the electroweak scale; a difference of seventeen orders of magnitude.
 The immediate solution to this is to "tune" the parameter $m_{h}$ in such a way that it cancels out the substantial $\Lambda$ correction.
 Ultimately, this tuning requirement implies that the SM is essentially a low-energy solution to nature,  accurate to an energy of $\Lambda \sim \mathcal{O}(1)$ TeV.
-Fortuitously this is the energy regime in which current colliders are able to operate, therefore we are able to explore, and hopefully discover, new physics at the boundary of the SM.
+Fortuitously, this is the energy regime in which current colliders are able to operate, therefore we are able to explore, and hopefully discover, new physics at the boundary of the SM.
 
-\fancyhead[r]{\leftmark}
 \section{Supersymmetry}
 Limitations of the SM, such as the previously discussed Higgs mass problem, can be alleviated by introducing a symmetry between matter particles and gauge bosons.
 By imposing this link between bosons and fermions figures \ref{fig:HiggsCorrections}\subref{fig:FermionCorrection} and \ref{fig:HiggsCorrections}\subref{ref:BosonCorrection}'s weights could balance one another in calculating the mass of the Higgs boson. 
@@ -281,41 +261,41 @@ An important feature of the MSSM is the two Higgs doubles, $H_{u}$ and $H_{d}$, 
 Furthermore, for the MSSM to be normalised there must be at least two Higgs fields.
 As a result of this we end up with four Higgs-type states, $H^{0}_{u},  H^{0}_{d}, H^{+}_{u}, H^{-}_{d}$, all of which have supersymmetric partners.
 
-A full table of MSSM particles is given below.
+A full table of MSSM particles is given in table \ref{tab:MSSMParticles}
 
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{ c c c c }
 \toprule
-Particle Group	& Spin 	& Gauge Eigenstate 	& Mass Eigenstate \\
+Particle Group    & Spin     & Gauge Eigenstate     & Mass Eigenstate \\
 \midrule 
 \vspace{3mm}
-		& 		& $\tilde{u}_{L}, \tilde{u}_{R}, \tilde{d}_{L}, \tilde{d}_{R}$	& same	\\
+        &         & $\tilde{u}_{L}, \tilde{u}_{R}, \tilde{d}_{L}, \tilde{d}_{R}$    & same    \\
 \vspace{3mm}
-squarks 	& $0$	& $\tilde{c}_{L}, \tilde{c}_{R}, \tilde{s}_{L}, \tilde{s}_{R}$	& same	\\
+squarks     & $0$    & $\tilde{c}_{L}, \tilde{c}_{R}, \tilde{s}_{L}, \tilde{s}_{R}$    & same    \\
 \vspace{3mm}
-		& 		& $\tilde{t}_{L}, \tilde{t}_{R}, \tilde{b}_{L}, \tilde{b}_{R}$	& $\tilde{t}_{1}, \tilde{t}_{2}, \tilde{b}_{1}, \tilde{b}_{2}$	\\
+        &         & $\tilde{t}_{L}, \tilde{t}_{R}, \tilde{b}_{L}, \tilde{b}_{R}$    & $\tilde{t}_{1}, \tilde{t}_{2}, \tilde{b}_{1}, \tilde{b}_{2}$    \\
 
 \hline 
 
 \vspace{3mm}
-		& 		& $\tilde{e}_{L}, \tilde{e}_{R}, \tilde{\nu}_{e}$		& same	\\
+        &         & $\tilde{e}_{L}, \tilde{e}_{R}, \tilde{\nu}_{e}$        & same    \\
 \vspace{3mm}
-sleptons 	& $0$	& $\tilde{\mu}_{L}, \tilde{\mu}_{R}, \tilde{\nu}_{\mu}$	& same	\\
+sleptons     & $0$    & $\tilde{\mu}_{L}, \tilde{\mu}_{R}, \tilde{\nu}_{\mu}$    & same    \\
 \vspace{3mm}
-		& 		& $\tilde{\tau}_{L}, \tilde{\tau}_{R}, \tilde{\nu}_{\tau}$	& $\tilde{\tau}_{1}, \tilde{\tau}_{2}, \tilde{\nu}_{\tau}$	\\	
-		
+        &         & $\tilde{\tau}_{L}, \tilde{\tau}_{R}, \tilde{\nu}_{\tau}$    & $\tilde{\tau}_{1}, \tilde{\tau}_{2}, \tilde{\nu}_{\tau}$    \\    
+        
 \hline \\
 
-gluino	& $1/2$	& $\tilde{g}$	&	same \\
+gluino    & $1/2$    & $\tilde{g}$    &    same \\
 \\
 \hline \\
 
-Neutralinos	& $1/2$	& $\tilde{B}^{0}, \tilde{W}^{0}, \tilde{H}^{0}_{u}, \tilde{H}^{0}_{d}$& $\tilde{\chi}^{0}_{1}, \tilde{\chi}^{0}_{2}, \tilde{\chi}^{0}_{3}, \tilde{\chi}^{0}_{4}$ \\
+Neutralinos    & $1/2$    & $\tilde{B}^{0}, \tilde{W}^{0}, \tilde{H}^{0}_{u}, \tilde{H}^{0}_{d}$& $\tilde{\chi}^{0}_{1}, \tilde{\chi}^{0}_{2}, \tilde{\chi}^{0}_{3}, \tilde{\chi}^{0}_{4}$ \\
 \\
 \hline \\
 
-Charginos		& $1/2$	& $\tilde{W}^{\pm}, \tilde{H}^{+}_{u}, \tilde{H}^{-}_{d}$& $\tilde{\chi}^{\pm}_{1}, \tilde{\chi}^{\pm}_{2}$ \\
+Charginos        & $1/2$    & $\tilde{W}^{\pm}, \tilde{H}^{+}_{u}, \tilde{H}^{-}_{d}$& $\tilde{\chi}^{\pm}_{1}, \tilde{\chi}^{\pm}_{2}$ \\
 \\
 \bottomrule
 \end{tabular}
@@ -331,16 +311,61 @@ The mass ordering of the charginos and neutralinos runs in order with their indi
 \tilde{\chi}^{0}_{1} \leq \tilde{\chi}^{0}_{2} &\leq \tilde{\chi}^{0}_{3} \leq \tilde{\chi}^{0}_{4} \\
 \tilde{\chi}^{\pm}_{1} &\leq \tilde{\chi}^{\pm}_{2}.
 \end{align}
+Furthermore, it is assumed that $\tilde{\chi}^{0}_{1}$ is the lightest of the SUSY particles, often called the LSP for short.
+An interesting outcome of supersymmetry is the prediction of five real Higgs particles.
+These include: $h^{0}$ and $H^{0}$ which are both $CP$-even, $A^{0}$ which is $CP$-odd, and two charged particles $H^{\pm}$.
+The multiplicity of Higgs particles complicates the calculation of the Higgs mass. 
+In the SM there is only one free parameter but now one requires the mass of the $CP$-off Higgs particle, $A^{0}$, labeled $m_{A}$, as well as the quantity
+\begin{align}
+\tan \beta = \frac{v_{u}}{v_{d}}.
+\label{eqn:HiggsParameter}
+\end{align}
+Here $v_{u}$ and $v_{d}$ represent two vacuum expectation values, relating to the local minima of the potential discussed in subsection \ref{subsec:EWInteraction} responsible for spontaneous electroweak symmetry breaking.
 
+\paragraph{$R$-parity}  
+\
+\\ \\
+In particle interactions, there are certain quantities that one may wish to conserve.
+Generally, in SM interactions these include baryon and lepton number as they represent good symmetries.
+A similar notion can be introduced in SUSY interactions through the addition of a new quantity, \textit{R-parity}.
+$R$-parity is defined in terms of baryon number, $B$, lepton number, $L$, and spin, $s$, through the following relationship \cite{martin2010supersymmetry}:
+\begin{align}
+P_{R} = (-1)^{3B + L + 2s}.
+\end{align}
+Somewhat more heuristically, one can also state $R$-parity as a piecewise function as follows:
+\begin{align}
+P_{R} = \left\{\begin{matrix}
++1, & \textrm{SM Particle} \\ 
+-1,  & \ \ \ \ \textrm{SUSY Particle}.  
+\end{matrix}\right.
+\end{align}
+$R$-parity conservation places certain rules on particle interactions that involve supersymmetry, such as
+\begin{itemize}
+\item SUSY particles are created in pairs from SM interactions,
+\item $\tilde{\chi}^{0}_{1}$, the LSP,  must be stable.
+\end{itemize}
+These conditions can be simply proven by considering the multiplicative definition of $R$-parity.
+Suppose one starts with $n$ SM particles and produces $m$ SM particles and $l$ SUSY particles.
+We can write this interaction algebraically as
+\begin{align}
+n X \rightarrow m X^{\prime} + l \tilde{X}
+\end{align}
+where $X$ and $X^{\prime}$ are SM particles and $\tilde{X}$ is a SUSY particle.
+If we consider the $R$-parity values for this interaction we have
+\begin{align}
+(+1)^{n} = (+1)^{m} \times (-1)^{l}.
+\end{align}
+For this equation to hold true one must have
+\begin{align}
+(-1)^{l} = +1
+\end{align}
+therefore, $l$ must be an even integer.
 
+The stability of the LSP relates to RPC in a similar way as before. 
+Since there are no lighter SUSY particles to decay to, and since it cannot decay to only SM particles, it must be stable.
+As a result of this, the LSP becomes a good candidate for dark matter \cite{jungman1996supersymmetric}.
+It is a massive, electrically neutral particle that does not interact electromagnetically or strongly.
+Often particles of this nature are referred to as WIMPs (weakly interacting massive particles).
 
-
-\newpage
-\paragraph{$R$-parity}
-\paragraph{Dark Matter Candidate}
-\subsection{The Hierarchy Problem}
-
-\clearpage
-\bibliographystyle{ieeetr}
-\bibliography{../bibliography}
-\end{document}
+All of the theory presented above pertains to RPC theory.
+There exists $R$-parity violating (RPV) theory which has been used to explain phenomena such as proton decay, however, RPV will not be discussed in this dissertation \cite{barbier2005r}.
