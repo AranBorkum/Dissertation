@@ -15,7 +15,7 @@ In order to accelerate the protons to the required energy many smaller sub-accel
 
 \begin{figure}[H] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=.8\textwidth]{../Pictures/LHC.png} 
+   \includegraphics[width=.8\textwidth]{Pictures/LHC.png} 
    \caption{Schematic of the accelerator system at CERN \cite{Mobs:2197559}}
    \label{fig:LHC}
 \end{figure}
@@ -64,13 +64,13 @@ The following subsections will discuss the operation principles of each of the m
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Pictures/ATLASopen.jpg}
+        \includegraphics[width=\textwidth]{Pictures/ATLASopen.jpg}
     \caption{}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Pictures/ATLAS-X-sec.png}
+        \includegraphics[width=\textwidth]{Pictures/ATLAS-X-sec.png}
     \caption{}    
         \end{subfigure}
 \caption{(a) 3D rendering of the ATLAS Detector showing an inside view of the different components \\ (b) Cross section of the ATLAS detector showing example particle traces through the various layers}
@@ -100,11 +100,21 @@ y = - \ln \left( \tan \frac{\theta}{2} \right)
 which is then defined as $\eta$, the psudorapidity.
 The conversion between angle from the $x$-axis to values of $\eta$ is shown below.
 
-\begin{figure}[H] %  figure placement: here, top, bottom, or page
-   \centering
-   \includegraphics[width=0.7\textwidth]{../Pictures/etaConversion.png} 
-   \caption{Converstion curve relating the angle $\theta$ to the quantity $\eta$}
-   \label{fig:etaConversion}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Pictures/etaConversion.png}
+    \caption{}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{Pictures/Pseudorapidity2}
+    \caption{}    
+        \end{subfigure}
+\caption{(a) Conversion function of $\eta$ to $\theta$ \\ (b) Pictorial display of the relation between $\eta$ and $\theta$}
+\label{fig:etaConversion}
 \end{figure}
 
 \subsection{Inner Detector and Tracking}
@@ -129,3 +139,120 @@ This is not an issue, however, as jet reconstruction can still be achieved as we
 The muon detectors cover a solid angle of $\left | \eta \right | < 2.7$ and are designed to detect muons by detecting deflection in particle tracks due to magnetic fields.
 The magnetic field across the muon detector varies such that the particle track is not one single curve but a combination of many.
 At the ATLAS detector, the muon system is used as a trigger to select events with significantly high energy muons and to thereby measure the position of these muons as they travel through the detector.
+
+\section{Software}
+Within the analysis procedure discussed in this dissertation, two main scripts are utilised to achieve two of the most important features of the analysis.
+The first framework to be discussed will be the P{\scshape retty Python} package, developed my Nicola Abraham.
+This package is responsible for producing the plots of the variables, included extensively within this dissertation.
+
+The second framework used is the Y{\scshape ield Table} package, developed by the Experimental Particle Physics Group at the University of Sussex.
+This package is responsible for determining the resultant counts of each background and signal once subjected to cuts and conditions.
+The output of this program is a table, formatted in \LaTeX, is a full breakdown of background counts, with associated uncertainties, a combined total with propagated error, and an analogous sample count for each Monte Carlo generated SUSY sample.
+
+\subsection{P{\scshape rettyPython} Framework}
+P{\scshape rettyPython} is built as an object oriented software framework designed to produce histograms of background and signal events. 
+In conjunction with the production of histograms, the plots also include a display the yields of the backgrounds and samples, formatted into a table in the legend of the plot.
+Beneath each histogram produced one has the option of producing a significance trace, showing the relation between the signal and background.
+This feature is important, used primarily in this analysis to place contentious cuts on variables related to the acquired signal.
+
+\subsubsection{Significance}
+A naive approach to significance, relating the quality of the signal with respect to the background, is given as 
+
+\begin{align}
+Zn = \frac{S}{\sqrt{B}}, 
+\end{align}
+
+\noindent where $S$ and $B$ are the number of signal and background respectively.
+This, however, has its problems, most obviously when the background count is zero sending $Zn$ to infinity.
+A useful solution to this problem is to therefore adjust the definition of significance to avoid the presence of infinities, for example, using 
+
+\begin{align}
+Zn = \frac{S}{S + \sqrt{B}}.
+\end{align}
+
+\noindent In the analysis procedure, the calculation of significance is done using a more complicated formula, taking into account the fact that the signals and backgrounds in the analysis are estimates, based on a Monte Carlo event generator.
+The full formula is defined as \cite{cowan2008discovery}
+\begin{align}
+Zn = \sqrt{2 \left((S+B)\ln\left(1 + \frac{S}{B} \right) - S\right)}.
+\end{align}
+\noindent A full breakdown of the derivation of this form of the significance can be found in \cite{cowan2008discovery}.
+
+Conveniently, within the P{\scshape rettyPython} framework the calculation of significance can be processed using the function from the ROOT C++ library: B{\scshape inomialExpZ}.
+This function requires three inputs in the format:
+\begin{align}
+Zn = \texttt{BinomialExpZ}(S\_{y}, B\_{y}, \sigma\_{B, rel})
+\end{align}
+Where $S\_{y}$ and $B\_{y}$ and the signal and background yields respectively and $\sigma\_{B, rel}$ is the relative background uncertainty, set at $30\%$.
+Calculating the significance of a particular sample bin by bin allows for a trace of the significance to be plotted underneath in parallel to the main histogram.
+An important consideration to make is that negative significance values can be acquired from this method.
+This is not an issue as negative values are interpreted as zero within the analysis.
+
+\subsubsection{Inputs}
+
+In order to have samples and backgrounds in the histograms there exists a class for inputs, defining them as objects with certain properties.
+The important ones for the purpose of the plots made in the analysis one defines:
+\begin{itemize}
+\item the inputs name
+\item the \texttt{.root} file with the data tree for the particular input
+\item the name of the tree within which the data can be found
+\item the colour one wants the input to show up as in the final histogram
+\item the label for the input as you want it to show up in the legend of the histogram
+\item the scaling factor for the data, set to the luminosity of the data
+\item the weight of the input, defined as a specific combination of values specific to each input.
+\end{itemize}
+
+\subsubsection{Variables}
+The variables plotted are themselves objects, constructed using the variable class. 
+In order to have stylistic control over the final histogram one has the ability to define certain properties of the variables.
+These include:
+\begin{itemize}
+\item the variable name as it appears in the \texttt{.root} file
+\item the units of this variable, generally this is GeV
+\item the label as you want it to appear on the $x$-axis of the histogram
+\item the range and number of bins you want in the plot.
+\end{itemize}
+
+\subsubsection{Defining signal regions}
+Perhaps the most important part of the framework is the environment within which the cuts and limitations can be placed on the variables being plotted.
+These regions are defined by constructing objects of type 'region'.
+There are three main components to the regions used in the analysis discussed in this dissertation.
+The first of which is the name of the region, used in the name of the file when created and also printed as a subtitle in the plot.
+The second definition to be made is a tuple including all of the cuts that the program must apply when run.
+The third definition is another tuple including a list of the 'n minus ones'.
+These can be used to add directional arrows showing the position and direction of a cut on a particular variable, or to apply cut on variables whilst plotting a different variable.
+
+\subsubsection{Running the software}
+Seeing as there are many components required before a plot can be constructed, many files must be run in parallel such that all of the information to make a single plot is available.
+Within the package there exists the file \texttt{run.py} containing all of the initiating commands for making the plots.
+In parallel, one must run the Python files containing the constructors for the variables, inputs, and regions being used, contained in a directory called \texttt{my\_configurations}.
+One can also include the systematics defined analogously to variables and inputs.
+Finally, one can apply \texttt{-j n} allowing for the programs to be run on \texttt{n} cores.
+This leaves the execution command for the production of variable histograms as shown below.
+
+\begin{center}
+\texttt{./run.py -c my\_configurations/my\_inputs.py my\_configurations/my\_vars.py my\_configurations/my\_syst.py my\_configurations/my\_regions\_WZ.py -j n}
+\end{center}
+
+\subsection{Y{\scshape ield Table} Framework}
+
+The Y{\scshape ieldTable} framework is responsible for calculating a the number of event yields from each input as well as the associated uncertainty with each yield value.
+The output of this is a \texttt{.tex} file with a table of results formatted as a LaTeX tabular environment.
+
+In order to run the script one must define:
+\begin{itemize}
+\item the directory in which the background and sample nTuples are stored
+\item the directory in which the data files are stored
+\item a name for the output file, generally in the format \texttt{$<$name$>$.tex}
+\item the luminosity used in the analysis
+\item the label '3L', required to specify the tri-lepton analysis
+\item a boolean input of whether or not to analyse the data files.
+\end{itemize}
+
+With these primary inputs defined one can go onto to specifying the number of cuts and the combination of conditions within each cut.
+The number of cuts applied becomes the number of columns in the final table of results.
+
+Filling the columns once the layout of the table has been made is a relatively simple process.
+For each background and sample used a row is defined with the input's name.
+The nTuple for the particular input is opened and cycled through, counting all of the entries inside that satisfy the conditions defined in the individual cuts.
+Secondly, the uncertainty on the number of events counted is calculated and then written into the output file.
+Additionally, a row showing the total combined backgrounds with associated uncertainties for each column are included in the final output.

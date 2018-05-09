@@ -1,7 +1,20 @@
+This dissertation discusses the analysis carried out, and results achieved in the MPhys final year project aiming to optimise a set of selection criteria in the search for electroweak supersymmetric particle production.
+Electroweak supersymmetry is one of many channels by which, theoretically, supersymmetric particles can be produced.
+By measuring the missing transverse energy of the signals detected at the LHC, along with very specific interaction signatures, one is able to infer certain qualities of the final state supersymmetric particles.
+Unfortunately, numerous Standard Model interaction look identical to the detector, therefore selection criteria and kinematic restrictions must be put in place with the aim of extracting evidence of supersymmetry from the overwhelming Standard Model background.
+If found, supersymmetry offers a good candidate for dark matter; a problem on the forefront of cosmology.
+Furthermore, supersymmetry offers an explanation as to why the measured mass of the Higgs boson is much lower than theoretically predicted.
+
+The remainder of Chapter \ref{chap:intro} will discuss the theoretical background of the dissertation.
+Chapter \ref{chap:tools} will discuss the apparatus and tools used to carry out the analysis.
+Chapter \ref{chap:analysis} will discuss the analysis as it was executed and the results acquired in the process, and the conclusions are given in Chapter \ref{chap:conc}.
+The appendices contain relevant information for the dissertation not included in the main body of work.
+
+
 \section{The Standard Model of Particle Physics}
 The Standard Model (SM) of particle physics classifies the elementary particles, as well as three of the four fundamental forces of nature \cite{oerter2006theory}. 
 These forces include electromagnetism, the weak interaction, and the strong interaction.
-The nature by which these fundamental facets of the universe interact is described through the mathematical formalisms of quantum field theory.
+The way in which these fundamental facets of the universe interact is described through the mathematical formalisms of quantum field theory.
 Unfortunately, a complete quantum field theory of gravity is not yet known, however, efforts continue in the pursuit of combining Einstein's General Relativity with quantum mechanics.
 Despite this missing piece the SM continues to have theoretical predictions validated by experimental evidence.
 
@@ -128,7 +141,7 @@ A visual representation of the quark and gluon colour charge combinations is giv
    \label{fig:colourCharge}
 \end{figure}
 
-\noindent It is important that, similarly to electric charge, colour charge must be conserved in strong interactions.
+\noindent It is important that, similarly to electric charge, the colour charge must be conserved in strong interactions.
 
 With the catalogue of theory describing the strong interaction, QCD has become another success of the SM.
 The existence of gluons has been inferred by experiment.
@@ -177,21 +190,21 @@ These corrections include those shown in figure \ref{fig:HiggsCorrections}
     \centering
     \begin{subfigure}[b]{0.33\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Pictures/HiggsFermionCorr.png}
+        \includegraphics[width=\textwidth]{Pictures/HiggsFermionCorr.png}
         \caption{}
         \label{fig:FermionCorrection}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.33\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=1.5in]{../Pictures/HiggsGaugeCorr.png}
-	\caption{}
-	\label{ref:BosonCorrection}
+        \includegraphics[width=\textwidth, height=1.5in]{Pictures/HiggsGaugeCorr.png}
+    \caption{}
+    \label{ref:BosonCorrection}
     \end{subfigure}
         ~
     \begin{subfigure}[b]{0.33\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Pictures/HiggsHiggsCorr.png}
+        \includegraphics[width=\textwidth]{Pictures/HiggsHiggsCorr.png}
         \caption{}
     \end{subfigure}
     \caption{Loop corrections from (a) fermions, (b) $W$ and $Z$ bosons, and (c) the Higgs bosons in the mass calculation of the Higgs boson}
@@ -227,14 +240,14 @@ Neutrons and protons are both spin-1/2 fermions, whereas pions are spin-0 bosons
 Conversely, as supersymmetry provides a link between integer and half-integer spin particles, it would be possible for a transformation of a fermion to a boson, and vice versa.
 
 Mathematically, the generation of supersymmetric states is done by use of the four generators: $Q_{\alpha}$, $Q_{\dot{\alpha}}$, $\overline{Q}_{\alpha}$, and $\overline{Q}_{\dot{\alpha}}$. 
-Here $\alpha$ and $\dot{\alpha}$ represent the left and right-handed Weyl spinor indices respectively, and $Q$ and $\overline{Q}$ are the particle and anti-particle states respectively.
+Here $\alpha$ and $\dot{\alpha}$ represent the left and right-handed Weyl spinor indices respectively, and $Q$ and $\overline{Q}$ are the particle and antiparticle states respectively.
 These generators can act on a scalar state, as follows
 \begin{align}
 Q_{\alpha} \left| \phi \right> = \left|\psi_{\alpha}\right>,
 \end{align}
 producing a spinor containing both fermion and boson fields, often referred to as supermultiplets. 
 These generated states will be either chiral-states, having a boson and a left-handed fermion, or anti-chiral, having a boson and a right-handed fermion.
-As a result, if supersymmetry is in fact an extension to the SM, it implies that for every particle there exists a supersymmetric partner with identical quantum numbers and a spin value that differs by one half.
+As a result, if supersymmetry is, in fact, an extension to the SM, it implies that for every particle there exists a supersymmetric partner with identical quantum numbers and a spin value that differs by one half.
 
 Within the formalisms of supersymmetry one finds 
 \begin{align}
@@ -244,18 +257,18 @@ where $Q$ is the SUSY generator operator and $P^{\mu}$ is the momentum operator.
 The fact that these two operators commute implies that if supersymmetry is an exact symmetry, the fermion and boson states of the supermultiplet must have identical masses.
 This, however, does not appear to be the case as no supersymmetric particles have been found to have masses similar to the masses of SM particles.
 What this implies is that supersymmetry is a broken symmetry, however, this concept is not well understood yet and so models that preserve certain features of supersymmetry but still account for its breaking are being developed. 
-This is known as soft supersymmetry breaking, and essentially allows for the mass splitting of SUSY partners to be up to $\mathcal{O}(1)$ TeV.
-This scheme hold promise as the concept itself can be linked to electroweak symmetry breaking \cite{chung2005soft} and places SUSY partners within the mass capabilities of current experiments.
+This is known as soft supersymmetry breaking and essentially allows for the mass splitting of SUSY partners to be up to $\mathcal{O}(1)$ TeV.
+This scheme holds promise as the concept itself can be linked to electroweak symmetry breaking \cite{chung2005soft} and places SUSY partners within the mass capabilities of current experiments.
 
 \subsection{Minimal Supersymmetric Standard Model} 
-The Minimal Supersymmetric Standard Model, often referred to as the MSSM for short, is an extension to the SM that includes SUSY. 
+The Minimal Supersymmetric Standard Model often referred to as the MSSM for short, is an extension to the SM that includes SUSY. 
 It is minimal as it introduces the fewest number of new particles states and interactions required to be consistent with the phenomenology \cite{baer2006weak}.
 
 Fundamentally, this model replaces SM particles with SUSY supermultiplets containing their additional fermions or bosons. 
 For the sake of semantics, a nomenclature is introduced to differentiate between SM and SUSY particles.
-A SM fermion, such as a quark or lepton, is paired with a SUSY particle of the same name, prefixed with `$s$-'. 
+An SM fermion, such as a quark or lepton, is paired with a SUSY particle of the same name, prefixed with `$s$-'. 
 For example, the up quark ($u$) is paired with the sup squark ($\tilde{u}$).
-Simillarly, SM bosons are paired with SUSY fermions of the same name, however, this time suffixed with `-$ino$', giving us the bino ($\tilde{B}$), wino ($\tilde{W}$), and gluino ($\tilde{g}$).
+Similarly, SM bosons are paired with SUSY fermions of the same name, however, this time suffixed with `-$ino$', giving us the bino ($\tilde{B}$), wino ($\tilde{W}$), and gluino ($\tilde{g}$).
 
 An important feature of the MSSM is the two Higgs doubles, $H_{u}$ and $H_{d}$, which only give mass to the up and down quarks respectively. 
 Furthermore, for the MSSM to be normalised there must be at least two Higgs fields.
@@ -369,3 +382,52 @@ Often particles of this nature are referred to as WIMPs (weakly interacting mass
 
 All of the theory presented above pertains to RPC theory.
 There exists $R$-parity violating (RPV) theory which has been used to explain phenomena such as proton decay, however, RPV will not be discussed in this dissertation \cite{barbier2005r}.
+
+\section{Electroweak Supersymmetry and Particle Production}
+There exist many theoretical modes of production for supersymmetric particles.
+The mode of production considered in this dissertation comes under the category of electroweak supersymmetry; that is supersymmetry mediated by $W$ and $Z$ bosons as well as sleptons, the supersymmetric sister particles to Standard Model leptons.
+
+Specifically, to this dissertation, the interaction mode is $WZ$ mediated supersymmetric production, shown below.
+
+\begin{figure}[H] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.6\textwidth]{Pictures/SUSYProduction} 
+   \caption{$WZ$ mediated supersymmetric particle production from $pp$ collisions}
+   \label{fig:myProduction}
+\end{figure}
+
+\noindent It is important to affirm that the diagram shown in figure \ref{fig:myProduction} is not a Feynman diagram.
+This exact interaction as shown does not conserve charge and so would not be allowed by the Standard Model.
+
+
+This interaction can be considered as a three-stage, RPC, supersymmetric particle production.
+Stage one consists of the direct byproducts of the $pp$ collision:
+\begin{align}
+p + p \rightarrow \tilde{\chi}^{\pm}_{1} + \tilde{\chi}^{0}_{2} + \textrm{other},
+\end{align}
+
+\noindent note that in this interaction the "other" is included to represent the multitude of particles other than the SUSY produced in the high energy $pp$ collisions.
+
+The second stage of the interaction is the decay of the newly created supersymmetric particles.
+From this point, one could consider the interactions using Feynman diagrams as conservation rules are obeyed.
+The decay of these particles is given as follows:
+\begin{align}
+\tilde{\chi}^{\pm}_{1} + \tilde{\chi}^{0}_{2} &\rightarrow (\tilde{\chi}^{\pm}_{1} \rightarrow W^{\pm} + \tilde{\chi}^{0}_{1})(\tilde{\chi}^{0}_{0} \rightarrow Z^{0} + \tilde{\chi}^{0}_{1}) \\
+&\rightarrow W^{\pm} + Z^{0} + 2 \tilde{\chi}^{0}_{1}
+\end{align}
+
+\noindent It is at this point of the interaction where the two LSPs, responsible for the missing transverse energy, are produced. 
+As described previously, LSPs only interact through the weak interaction and are therefore undetectable in particle detectors, except through inference from large missing transverse energy.
+It is important to consider the fact that the $Z$ boson in this interaction could naturally be replaced with a Higgs boson.
+This too is an interesting mode of supersymmetric particle production, however, Higgs mediated interactions can result in lepton flavour combinations that are not achievable in $WZ$ mediated interactions.
+This will be discussed more thoroughly in chapter \ref{chap:analysis}.
+
+The third phase of the interaction is a the leptonic decay of the weak gauge bosons, a purely Standard Model interaction.
+This gauge boson decay can be written as follows:
+\begin{align}
+W^{\pm} + Z^{0} &\rightarrow (W^{\pm} \rightarrow \ell^{\pm} + \nu) (Z^{0} \rightarrow \ell^{+} + \ell^{-}) \\
+& \rightarrow \ell^{+} + \ell^{-} + \ell^{\pm} + \nu
+\end{align}
+
+\indent Naturally, the leptons produced as a result of $Z$ decay must be of the same flavour, and the lepton associated with the $W$ decay can be of the same or a different flavour.
+It is at this final stage of the interaction that one obtains the signature of the overall process: two same flavour, opposite sign leptons, a tri-leptonic particle signature, and missing transverse energy in the detector as mediated by the two LSPs and the neutrino produced from the $W$ decay.
