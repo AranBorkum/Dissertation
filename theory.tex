@@ -1,7 +1,7 @@
-This dissertation discusses the analysis carried out, and results achieved in the MPhys final year project aiming to optimise a set of selection criteria in the search for electroweak supersymmetric particle production.
+This dissertation discusses the analysis carried out and results achieved in the MPhys final year project aiming to optimise a set of selection criteria in the search for electroweak supersymmetry.
 Electroweak supersymmetry is one of many channels by which, theoretically, supersymmetric particles can be produced.
 By measuring the missing transverse energy of the signals detected at the LHC, along with very specific interaction signatures, one is able to infer certain qualities of the final state supersymmetric particles.
-Unfortunately, numerous Standard Model interaction look identical to the detector, therefore selection criteria and kinematic restrictions must be put in place with the aim of extracting evidence of supersymmetry from the overwhelming Standard Model background.
+Unfortunately, numerous Standard Model interactions look identical to the process being searched for in the eyes of the detector, therefore selection criteria and kinematic restrictions must be put in place with the aim of extracting evidence of supersymmetry from the overwhelming Standard Model background.
 If found, supersymmetry offers a good candidate for dark matter; a problem on the forefront of cosmology.
 Furthermore, supersymmetry offers an explanation as to why the measured mass of the Higgs boson is much lower than theoretically predicted.
 
@@ -20,11 +20,12 @@ Despite this missing piece the SM continues to have theoretical predictions vali
 
 The particles of the SM are represented as excitations of quantum fields.
 Matter particles - the quarks and leptons - are described by fermion fields, characterised by having half-integer spin values.
-The field dynamics of which are described by their Lagrangian, $\mathcal{L}$, a quantity that describes the kinematics and excitations of the particular field. 
+The dynamics of these fields are dictated by their Lagrangian, $\mathcal{L}$, a quantity that describes the kinematics and excitations of the particular field. 
 The complete Lagrangian for the SM as a whole must obey certain symmetries, including translational and rotational symmetries, as well as the inertial frame invariance prescribed by special relativity.
 Furthermore, a local $SU(3) \times SU(2) \times U(1)$ gauge symmetry must be obeyed to ensure the renormalisabielity of the theory. 
-Without the ability to be renormalised, the SM would not possess the predictive capability is has.
-In order to preserve the gauge invariance, inclusion of gauge fields with integer spin must be included.
+Without the ability to be renormalised, the SM would not possess the predictive capability it has.
+
+In order to preserve the gauge invariance, gauge fields with integer spin must be included.
 These integer spin fields are the so-called boson fields, and they describe particles that carry the three forces included in the SM.
 From this we get, in total, twelve gauge fields required to write a gauge invariant SM Lagrangian, one from the single $U(1)$ generator, three for the $SU(2)$ generators, and eight for the $SU(3)$ generators.
 In conjunction with nineteen numerical constants, given in table \ref{tab:parameters}, we are furnished with the ability to write down a gauge invariant SM Lagrangian
@@ -43,7 +44,7 @@ The solution to both problems is to introduce to concept of spontaneous symmetry
 Essentially, spin-0 scalar fields are introduced that couple to the electroweak gauge fields and preserve the gauge invariance of the Lagrangian.
 The new interaction potentials are chosen in such a way that the field's lowest energy states do not correspond with the field's zero values.
 Therefore, the field's ground state will break the $SU(2) \times U(1)$ symmetry, while the Lagrangian simultaneously preserves the symmetry.
-These scalar fields acquire non-zero values, named the vacuum expectation value (VEV), which allows for the fermion fields and weak interaction gauge bosons to be massive particles.
+These scalar fields acquire non-zero values, named the vacuum expectation values (VEVs), which allows for the fermion fields and weak interaction gauge bosons to be massive particles.
 A consequence of this mechanism is that one extra scalar field obtains mass, therefore a neutral spin-0 massive particle is predicted to exist; the Higgs boson.
 
 With this mechanism one can write the electroweak Lagrangian as follows:
@@ -52,9 +53,9 @@ With this mechanism one can write the electroweak Lagrangian as follows:
 \end{align}
 
 \noindent In the gauge portion of the Lagrangian we obtain an isotriplet from the $SU(2)$, written as $\textbf{W}^{\mu}_{1,2,3}$, and a singlet from the $U(1)$, $B^{\mu}$.
-From this, one write the gauge term as
+From this, one can write the gauge term as
 \begin{align}
-\mathcal{L}_{\textrm{gauge}} = -\frac{1}{4}\left(\textbf{W}^{\mu \nu}W_{\mu \nu} + B^{\mu \nu}B_{\mu \nu} \right),
+\mathcal{L}_{\textrm{gauge}} = -\frac{1}{4}\left(\textbf{W}^{\mu \nu}\textbf{W}_{\mu \nu} + B^{\mu \nu}B_{\mu \nu} \right),
 \end{align}
 where
 \begin{align}
@@ -96,7 +97,7 @@ with the covariant derivative for electroweak theory defined as
 D_{\mu} =  \partial_{\mu} + ig_{2}\textbf{W}_{\mu} \cdot \textbf{T} + \frac{1}{2} ig_{1} B_{\mu} Y,
 \label{eqn:EWDerivative}
 \end{align}
-where $\textbf{T}$ is the weak isospin, $g_{1}$ is the $U(1)$ gauge coupling, and $Y$ is the weak hypercharge. \textit{potentially define these terms}
+where $\textbf{T}$ is the weak isospin, $g_{1}$ is the $U(1)$ gauge coupling, and $Y$ is the weak hypercharge.
 The Higgs component of the Electroweak Lagrangian is defined as 
 \begin{align}
 \mathcal{L}_{\textrm{higgs}} = \left| D_{\mu} h \right| -\lambda \left( \left| h \right|^{2} - \frac{v^{2}}{2} \right)^{2},
@@ -107,7 +108,7 @@ Finally, the Yukawa interaction which describes the interaction between fermions
 \begin{align}
 \mathcal{L}_{\textrm{Yukawa}} = \sum -\lambda_{e} \bar{L} h e_{R} - \lambda_{d} \bar{Q} h d_{R} - \lambda_{u} \epsilon^{ab}\bar{Q}_{a} h^{\dagger}_{b} u_{R} + h.c.
 \end{align}
-where $\lambda_{x}$ is the Yukawa coupling for a particular fermion, $x$, $L$ and $e_{R}$ and the lepton fields, $Q$, $u_{R}$, and $d_{R}$ and the quark fields, and $\epsilon$ is the rank two Levi-Civita symbol.
+where $\lambda_{x}$ is the Yukawa coupling for a particular fermion, $x$, $L$ and $e_{R}$ and the lepton fields, $Q$, $u_{R}$, and $d_{R}$ are the quark fields, and $\epsilon$ is the rank two Levi-Civita symbol.
 
 \subsection{Quantum Chromodynamics}
 The theoretical description of the strong force is described by Quantum Chromodynamics (QCD), underlined by the $SU(3)$ gauge symmetry. 
@@ -145,14 +146,14 @@ A visual representation of the quark and gluon colour charge combinations is giv
 
 With the catalogue of theory describing the strong interaction, QCD has become another success of the SM.
 The existence of gluons has been inferred by experiment.
-Furthermore, their interaction with quarks is consistent with that described in the theory \cite{brandelik1979evidence}.
+Furthermore, their interaction with quarks is consistent with that described in the theoretical formalisms \cite{brandelik1979evidence}.
 
 \subsection{Limits of the Standard Model}
 The SM has been rigorously tested for several decades, with predictions closely matching experimental results.
 However, the SM is not without its shortcomings, the most obvious of which is the lack of an explanation of gravity.
 Currently, the inclusion of terms involving gravity leads to the inability of the theory to be renormalised.
 Without renormalisabielity, the theory loses the ability to make qualified predictions. 
-Luckily, the energy regime in which gravitational effects are noticeable is far beyond our current capabilities.
+Luckily, the energy regime in which gravitational effects are noticeable is far beyond the current capabilities of particle colliders.
 For gravitational effects to be important experiments would need to be approaching the Planck energy, defined as
 \begin{align}
 E_{\textrm{Planck}} = \sqrt{\frac{\hbar c^{5}}{G_{N}}} \approx 1.2 \times 10^{16}\ \textrm{TeV}
@@ -162,12 +163,12 @@ By comparison, the LHC at CERN reaches energies of $\sqrt{s} = 13$ TeV, fifteen 
 
 Other big questions in physics include:
 \begin{itemize}
-\item Matter-antimatter asymmetry: Naturally occurring antimatter is effectively nonexistent, minimally coming from cosmic ray interactions. 
-The asymmetry is thought to come from $CP$-violating interactions, where $CP$ is the combined symmetry of charge conjugation ($C$) and parity conservation ($P$).  
+\item Matter-antimatter asymmetry: naturally occurring antimatter is effectively nonexistent, minimally coming from cosmic ray interactions. 
+The asymmetry is thought to come from $CP$-violating interactions, where $CP$ is the combined symmetry of charge conjugation ($C$) and parity ($P$).  
 Although there are $CP$-violating terms in the quark mixing and neutrino mixing matrices, these terms are not large enough to compensate for the matter-antimatter disparity \cite{canetti2012matter}.
 
 \item Neutrino masses: When observing solar neutrinos, it is seen that neutrinos undergo flavour change. 
-This effect is known as neutrino oscillations and immediately implies that neutrinos have mass.
+This effect is known as neutrino oscillations and immediately implies that neutrinos must have mass.
 This observation is contradictory to the SM which predicts massless neutrinos \cite{olive2014review}.
 
 \item Dark matter: Cosmological observations of the motion and masses of galaxies cannot be reconstructed from the visible matter.
@@ -216,7 +217,7 @@ These corrections include those shown in figure \ref{fig:HiggsCorrections}
 m_{\textrm{h, physical}}^{2} \approx m_{h}^{2} + \frac{C}{16 \pi} \Lambda^{2}
 \end{align}
 
-where $C$ is an amalgamation of SM coupling constants.
+\noindent where $C$ is an amalgamation of SM coupling constants.
 A full breakdown is given in \cite{baer2015supergravity}.
 The issue that arises is that when calculating the parameter $\Lambda$, quantum corrections pile up causing $\Lambda$ to be of the order of the Planck scale.
 The result of this is that the Higgs mass is predicted to be of the order of the Planck scale, whereas experiment shows that it is actually of the order of the electroweak scale; a difference of seventeen orders of magnitude.
@@ -310,6 +311,9 @@ Neutralinos    & $1/2$    & $\tilde{B}^{0}, \tilde{W}^{0}, \tilde{H}^{0}_{u}, \t
 
 Charginos        & $1/2$    & $\tilde{W}^{\pm}, \tilde{H}^{+}_{u}, \tilde{H}^{-}_{d}$& $\tilde{\chi}^{\pm}_{1}, \tilde{\chi}^{\pm}_{2}$ \\
 \\
+\hline \\
+Higgs Particles    &    0    & $H_{u}^{0}$, $H_{d}^{0}$, $H_{u}^{+}$, $H_{d}^{-}$ & $h^{0}$, $H^{0}$, $A^{0}$, $H^{\pm}$ \\
+\\
 \bottomrule
 \end{tabular}
 \caption{Table of supersymmetric partners to SM particles}
@@ -321,8 +325,8 @@ Charginos        & $1/2$    & $\tilde{W}^{\pm}, \tilde{H}^{+}_{u}, \tilde{H}^{-}
 This is because it is assumed that they show negligible mixing, therefore their mass eigenstates are unaffected.
 The mass ordering of the charginos and neutralinos runs in order with their indices such that
 \begin{align}
-\tilde{\chi}^{0}_{1} \leq \tilde{\chi}^{0}_{2} &\leq \tilde{\chi}^{0}_{3} \leq \tilde{\chi}^{0}_{4} \\
-\tilde{\chi}^{\pm}_{1} &\leq \tilde{\chi}^{\pm}_{2}.
+m_{\tilde{\chi}^{0}_{1}} \leq m_{\tilde{\chi}^{0}_{2}} &\leq m_{\tilde{\chi}^{0}_{3}} \leq m_{\tilde{\chi}^{0}_{4}} \\
+m_{\tilde{\chi}^{\pm}_{1}} &\leq m_{\tilde{\chi}^{\pm}_{2}}.
 \end{align}
 Furthermore, it is assumed that $\tilde{\chi}^{0}_{1}$ is the lightest of the SUSY particles, often called the LSP for short.
 An interesting outcome of supersymmetry is the prediction of five real Higgs particles.
@@ -335,9 +339,8 @@ In the SM there is only one free parameter but now one requires the mass of the 
 \end{align}
 Here $v_{u}$ and $v_{d}$ represent two vacuum expectation values, relating to the local minima of the potential discussed in subsection \ref{subsec:EWInteraction} responsible for spontaneous electroweak symmetry breaking.
 
-\paragraph{$R$-parity}  
-\
-\\ \\
+\subsubsection{$R$-parity}  
+
 In particle interactions, there are certain quantities that one may wish to conserve.
 Generally, in SM interactions these include baryon and lepton number as they represent good symmetries.
 A similar notion can be introduced in SUSY interactions through the addition of a new quantity, \textit{R-parity}.
@@ -352,7 +355,7 @@ P_{R} = \left\{\begin{matrix}
 -1,  & \ \ \ \ \textrm{SUSY Particle}.  
 \end{matrix}\right.
 \end{align}
-$R$-parity conservation places certain rules on particle interactions that involve supersymmetry, such as
+$R$-parity conservation (RPC) places certain rules on particle interactions that involve supersymmetry, such as
 \begin{itemize}
 \item SUSY particles are created in pairs from SM interactions,
 \item $\tilde{\chi}^{0}_{1}$, the LSP,  must be stable.
@@ -381,9 +384,10 @@ It is a massive, electrically neutral particle that does not interact electromag
 Often particles of this nature are referred to as WIMPs (weakly interacting massive particles).
 
 All of the theory presented above pertains to RPC theory.
-There exists $R$-parity violating (RPV) theory which has been used to explain phenomena such as proton decay, however, RPV will not be discussed in this dissertation \cite{barbier2005r}.
+There exists $R$-parity violating (RPV) theory which has been used to explain phenomena such as proton decay, however, RPV will not be discussed in this dissertation.
+More on RPV supersymmetry can be found in \cite{barbier2005r}.
 
-\section{Electroweak Supersymmetry and Particle Production}
+\section{Electroweak Supersymmetry}
 There exist many theoretical modes of production for supersymmetric particles.
 The mode of production considered in this dissertation comes under the category of electroweak supersymmetry; that is supersymmetry mediated by $W$ and $Z$ bosons as well as sleptons, the supersymmetric sister particles to Standard Model leptons.
 
@@ -396,17 +400,13 @@ Specifically, to this dissertation, the interaction mode is $WZ$ mediated supers
    \label{fig:myProduction}
 \end{figure}
 
-\noindent It is important to affirm that the diagram shown in figure \ref{fig:myProduction} is not a Feynman diagram.
-This exact interaction as shown does not conserve charge and so would not be allowed by the Standard Model.
-
-
 This interaction can be considered as a three-stage, RPC, supersymmetric particle production.
 Stage one consists of the direct byproducts of the $pp$ collision:
 \begin{align}
 p + p \rightarrow \tilde{\chi}^{\pm}_{1} + \tilde{\chi}^{0}_{2} + \textrm{other},
 \end{align}
 
-\noindent note that in this interaction the "other" is included to represent the multitude of particles other than the SUSY produced in the high energy $pp$ collisions.
+\noindent note that in this interaction the "other" is included to represent the multitude of particles other than the SUSY particles produced in the high energy $pp$ collisions.
 
 The second stage of the interaction is the decay of the newly created supersymmetric particles.
 From this point, one could consider the interactions using Feynman diagrams as conservation rules are obeyed.
@@ -425,9 +425,9 @@ This will be discussed more thoroughly in chapter \ref{chap:analysis}.
 The third phase of the interaction is a the leptonic decay of the weak gauge bosons, a purely Standard Model interaction.
 This gauge boson decay can be written as follows:
 \begin{align}
-W^{\pm} + Z^{0} &\rightarrow (W^{\pm} \rightarrow \ell^{\pm} + \nu) (Z^{0} \rightarrow \ell^{+} + \ell^{-}) \\
-& \rightarrow \ell^{+} + \ell^{-} + \ell^{\pm} + \nu
+W^{\pm} + Z^{0} &\rightarrow (W^{\pm} \rightarrow \ell^{\prime \pm} + \nu) (Z^{0} \rightarrow \ell^{+} + \ell^{-}) \\
+& \rightarrow \ell^{+} + \ell^{-} + \ell^{\prime \pm} + \nu
 \end{align}
 
-\indent Naturally, the leptons produced as a result of $Z$ decay must be of the same flavour, and the lepton associated with the $W$ decay can be of the same or a different flavour.
+\noindent Naturally, the leptons produced as a result of $Z$ decay must be of the same flavour, and the lepton associated with the $W$ decay can be of the same or a different flavour.
 It is at this final stage of the interaction that one obtains the signature of the overall process: two same flavour, opposite sign leptons, a tri-leptonic particle signature, and missing transverse energy in the detector as mediated by the two LSPs and the neutrino produced from the $W$ decay.

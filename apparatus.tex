@@ -22,7 +22,7 @@ In order to accelerate the protons to the required energy many smaller sub-accel
 
 \noindent The first phase of the acceleration process is the linear accelerator, Linac2. 
 Here the protons are initially accelerated to 50 MeV, after which they are injected into the Proton Synchrotron Booster where they are subsequently accelerated to 1.4 GeV.
-After this, protons are sent into the Proton Synchrotron (PS) where they reach an energy of 25 GeV.
+After this, the protons are sent into the Proton Synchrotron (PS) where they reach an energy of 25 GeV.
 The penultimate accelerator the is the Super Proton Synchrotron (SPS) which accelerates the protons to 450 GeV, after which they are injected into the LHC to reach the desired energy of 6.5 TeV.
 
 During this acceleration process, the protons coalesce into `bunches', each containing around 100 billion protons.
@@ -33,17 +33,17 @@ One can define the interaction rate of these bunches as
 \end{align}
 where $\sigma$ is the interaction cross-section and $\mathcal{L}$ is the instantaneous luminosity.
 One can estimate $dN/dt$, given the proton inelastic cross-section to be about 60 mb, at roughly 1 billion proton interactions per second.
-Taking the time integral of the instantaneous luminosity, given as
+By taking the time integral of the instantaneous luminosity, 
 \begin{align}
 L = \int \mathcal{L} dt,
 \end{align}
-one acquires a measure of the number of events collected. 
+one acquires a measure of the number of events collected, the integrated luminosity $L$. 
 As technology improves integrated luminosities get larger, furnishing us with the ability to discover rare new processes, such as supersymmetric particle production.
 
 \section{The ATLAS Detector}
 The ATLAS detector (\textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}) is one of the two multi-purpose detectors at the LHC.
 It is 44m long, 25 meters in diameter, and weighs roughly 7000 tonnes making it the largest particle detector ever built.
-The purpose of the ATLAS detector is to examine Higgs physics, QCD, and many BSM scenarios.
+The purpose of the ATLAS detector is to examine Higgs physics, QCD, and many beyond the Standard Model scenarios.
 
 The ATLAS detector is composed of multiple layers, each of which is responsible for identifying different types of particles. 
 The first of these layers is the silicon tracking sensors. 
@@ -53,11 +53,11 @@ Once the particles leave the tracking detector they first enter the electromagne
 This is designed to measure the energy of final state photons and electrons by considering the length of their associated showers.
 One does not generally observe muon showers in the electromagnetic calorimeter as the muon cross section vastly suppresses its ability to undergo Bremsstrahlung emission.
 The penultimate layer is the hadronic calorimeter, designed to detect the hadronic showers from longer-lived hadrons.
-Shortly lived hadrons are detected by inference from examining the final state products.
-For example, a $\pi^{0}$ meson is inferred by detecting two photons travelling in opposite directions with a combined energy equal to or greater than the mass of a $\pi^{0}$. 
+Shortly lived hadrons are detected by inference from examining their final state products.
+For example, the production of a $\pi^{0}$ meson is inferred by detecting two photons travelling in opposite directions with an invariant mass that allows for the reconstruction of the pion mass. 
 Lastly, there is the muon spectrometer designed to detect muons escaping the detector.
 
-A 3D rendering of the detector can be seen in figure \ref{fig:ATLAS}a and a simplified cross-section of the detector with example particle traces can be seen in figure \ref{fig:ATLAS}b.
+A 3D rendering of the detector can be seen in figure \ref{fig:ATLAScrossSection}a and a simplified cross-section of the detector with example particle traces can be seen in figure \ref{fig:ATLAScrossSection}b.
 The following subsections will discuss the operation principles of each of the major layers of the ATLAS detector in detail.
 
 \begin{figure}[H]
@@ -73,31 +73,30 @@ The following subsections will discuss the operation principles of each of the m
         \includegraphics[width=\textwidth]{Pictures/ATLAS-X-sec.png}
     \caption{}    
         \end{subfigure}
-\caption{(a) 3D rendering of the ATLAS Detector showing an inside view of the different components \\ (b) Cross section of the ATLAS detector showing example particle traces through the various layers}
-\label{fig:ATLAS}
+\caption{(a) 3D rendering of the ATLAS Detector showing an inside view of the different components \\ (b) Cross section of the ATLAS detector showing example particle traces through the various layers \cite{virdee2012physics}}
+\label{fig:ATLAScrossSection}
 \end{figure}
 
 \subsection{Co-ordinate Conventions}
 In Cartesian co-ordinates one defines the three axes such that $x$ is directed towards the centre of the main LHC ring, $y$ is directly vertical, and $z$ is directed along the beam line.
-Generally, because one mostly in the transverse - ($x$, $y$) plane - it is easier to work in polar coordinates such that $\phi=0$ defines the $x$-axis.
-One slight difference to conventional polar co-ordinates is that the angle $\theta$ is replaced with pseudorapidity. 
+Generally, because one mostly refers to features of the transverse plane, it is easier to work in polar coordinates such that $\phi=0$ defines the $x$-axis.
+One slight difference to conventional polar coordinates is that the angle $\theta$ is replaced with pseudorapidity. 
 This is defined as the massless or high energy limit of rapidity, $y$, where
 \begin{align}
 y = \frac{1}{2} \ln \left( \frac{E + p_{z}}{E - p_{z}} \right).
 \end{align}
 At high energy one can replace the momentum using
 \begin{align}
-p_{z} = E \cos \theta, 
+p_{z} = E \cos \theta. 
 \end{align}
-therefore,
+Replacing rapidity with pseudorapidity, $\eta$, we get
 \begin{align}
-y = \ln \left( \frac{1 + \cos \theta}{1 - \cos \theta} \right)^{1/2}.
+\eta = \ln \left( \frac{1 + \cos \theta}{1 - \cos \theta} \right)^{1/2}.
 \end{align}
-Using half angle trigonometric identities one can show that in the high energy limit
+Using half angle trigonometric identities one can show that this is equivalent to
 \begin{align}
-y = - \ln \left( \tan \frac{\theta}{2} \right)
+\eta = - \ln \left( \tan \frac{\theta}{2} \right)
 \end{align}
-which is then defined as $\eta$, the psudorapidity.
 The conversion between angle from the $x$-axis to values of $\eta$ is shown below.
 
 \begin{figure}[H]
@@ -120,7 +119,7 @@ The conversion between angle from the $x$-axis to values of $\eta$ is shown belo
 \subsection{Inner Detector and Tracking}
 The innermost component of the ATLAS detector is responsible for particle tracking, referred to as the inner detector (ID).
 It is built in layers each consisting of finely segmented detectors allowing for the reconstruction of particle tracks.
-It is composed of three main systems: the pixel detector, the semiconductor tracker (SCT), and the transition radiation tracker (TRT); these can be seen in the `Tracking' bracket in figure \ref{fig:ATLAS}b.
+It is composed of three main systems: the pixel detector, the semiconductor tracker (SCT), and the transition radiation tracker (TRT); these can be seen in the `Tracking' bracket in figure \ref{fig:ATLAScrossSection}b.
 By its construction it is able to cover a solid angle of $\left | \eta \right | < 2.5$.
 
 As stated previously, the inner detector is under a considerable magnetic field. 
@@ -128,9 +127,9 @@ This magnetic field, in conjunction with a particle's energy and electric charge
 The inner detector is responsible for quickly identifying these curves paths as from the curvature one can deduce a particle's momentum.
 
 \subsection{Electromagnetic and Hadronic Calorimeters}
-The calorimeters measure the energy of the particles interacting with it.
+The calorimeters measure the energy of the particles interacting with them.
 In ATLAS the calorimeters measure the energy of electrons, photons, and hadrons.
-As seen in figure \ref{fig:ATLAS}b ATLAS has an electromagnetic liquid Argon (LAr) calorimeter, and a hadronic calorimeter made of iron scintillator tiles.
+As seen in figure \ref{fig:ATLAScrossSection}, ATLAS has an electromagnetic liquid Argon (LAr) calorimeter, and a hadronic calorimeter made of iron scintillator tiles.
 Overall, the calorimetry setup covers a solid angle of up to $\left | \eta \right | < 4.9$.
 Comparatively the electromagnetic calorimeter provides a more finely grained measurement of electron and photon energies, whereas the hadronic calorimeter is much more coarse in its measurements.
 This is not an issue, however, as jet reconstruction can still be achieved as well as measurements of missing transverse energy.
@@ -140,20 +139,42 @@ The muon detectors cover a solid angle of $\left | \eta \right | < 2.7$ and are 
 The magnetic field across the muon detector varies such that the particle track is not one single curve but a combination of many.
 At the ATLAS detector, the muon system is used as a trigger to select events with significantly high energy muons and to thereby measure the position of these muons as they travel through the detector.
 
+\subsection{b-jet tagging} \label{subsec:bjetTag}
+An important tool in high energy physics is $b$-jet tagging, the process by which jets produced as a result of bottom quark production can be identified.
+The tagging of $b$-jets can be done by searching for the signatures of $B$ mesons, mesons that contain bottom quarks.
+These mesons are relatively long-lived allowing for them to travel a reasonable distance before ultimately decaying into other particles.
+Their lifetimes are not too long, however, allowing for the $B$ mesons to decay within the detector itself. 
+With the advent of precision silicon detectors, detectors are able to track the decay products of these $B$ mesons back to the original location of the decay.
+One finds that this is not the centre of the interaction, but rather a point displaced by some distance. 
+This gives the indication that the jet is a result of a $B$ meson decay.
+Additionally, bottom quarks are significantly more massive than their decay products. 
+This means that the decay products generally have high transverse momentum, consequently causing $b$-jets to be quite wide with high multiplicities (number of constituent particles).
+This is another indicative quality of $b$-jets used in the tagging process.
+
+It is important to note that $b$-jet tagging doesn't have a 100\% success rate.
+This means that if one is applying a restriction whereby all events with $b$-jets are discarded, a subset of these events will make it through the selection.
+
+\begin{figure}[H] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.4\textwidth]{Pictures/B-tagging_diagram} 
+   \caption{Graphical representation of the identification of $b$-jets}
+   \label{fig:bjetTagging}
+\end{figure}
+
 \section{Software}
 Within the analysis procedure discussed in this dissertation, two main scripts are utilised to achieve two of the most important features of the analysis.
-The first framework to be discussed will be the P{\scshape retty Python} package, developed my Nicola Abraham.
-This package is responsible for producing the plots of the variables, included extensively within this dissertation.
+The first framework to be discussed will be the P{\scshape rettyPython} package, developed by Nicola Abraham at the University of Sussex.
+This package is responsible for producing the ATLAS style plots of the variables, included extensively in this dissertation.
 
-The second framework used is the Y{\scshape ield Table} package, developed by the Experimental Particle Physics Group at the University of Sussex.
-This package is responsible for determining the resultant counts of each background and signal once subjected to cuts and conditions.
-The output of this program is a table, formatted in \LaTeX, is a full breakdown of background counts, with associated uncertainties, a combined total with propagated error, and an analogous sample count for each Monte Carlo generated SUSY sample.
+The second framework used is the Y{\scshape ieldTable} package, developed by the Experimental Particle Physics Group at the University of Sussex.
+This package is responsible for determining the resultant counts of each background and signal once subjected to user-defined cuts and conditions.
+The output of this program is a table containing a full breakdown of background counts, with associated uncertainties, a combined total with propagated error, and an analogous sample count for each Monte Carlo generated SUSY sample, conveniently formatted into a \LaTeX tabular environment.
 
 \subsection{P{\scshape rettyPython} Framework}
-P{\scshape rettyPython} is built as an object oriented software framework designed to produce histograms of background and signal events. 
-In conjunction with the production of histograms, the plots also include a display the yields of the backgrounds and samples, formatted into a table in the legend of the plot.
+P{\scshape rettyPython} is built as an object-oriented software framework designed to produce histograms of background and signal events. 
+In conjunction with the production of histograms, the plots also include a display the yields of the backgrounds and samples, contained within the legend of the plot.
 Beneath each histogram produced one has the option of producing a significance trace, showing the relation between the signal and background.
-This feature is important, used primarily in this analysis to place contentious cuts on variables related to the acquired signal.
+This feature is important, used primarily in this analysis to place contentious cuts on variables related to the sample signals.
 
 \subsubsection{Significance}
 A naive approach to significance, relating the quality of the signal with respect to the background, is given as 
@@ -162,12 +183,13 @@ A naive approach to significance, relating the quality of the signal with respec
 Zn = \frac{S}{\sqrt{B}}, 
 \end{align}
 
-\noindent where $S$ and $B$ are the number of signal and background respectively.
-This, however, has its problems, most obviously when the background count is zero sending $Zn$ to infinity.
-A useful solution to this problem is to therefore adjust the definition of significance to avoid the presence of infinities, for example, using 
+\noindent where $S$ and $B$ are the numbers of signal and background yields respectively.
+This, however, has its problems, most obviously when the background count is zero $Zn$ goes to infinity.
+This would be a non-sensical value for the significance of a given signal.
+One solution to this problem is to normalise the significance with respect to the signal yield, as shown below.
 
 \begin{align}
-Zn = \frac{S}{S + \sqrt{B}}.
+Zn = \frac{S}{S + \sqrt{B}}
 \end{align}
 
 \noindent In the analysis procedure, the calculation of significance is done using a more complicated formula, taking into account the fact that the signals and backgrounds in the analysis are estimates, based on a Monte Carlo event generator.
@@ -180,30 +202,33 @@ Zn = \sqrt{2 \left((S+B)\ln\left(1 + \frac{S}{B} \right) - S\right)}.
 Conveniently, within the P{\scshape rettyPython} framework the calculation of significance can be processed using the function from the ROOT C++ library: B{\scshape inomialExpZ}.
 This function requires three inputs in the format:
 \begin{align}
-Zn = \texttt{BinomialExpZ}(S\_{y}, B\_{y}, \sigma\_{B, rel})
+Zn = \texttt{BinomialExpZ}(S_{y}, B_{y}, \sigma_{B, rel})
 \end{align}
-Where $S\_{y}$ and $B\_{y}$ and the signal and background yields respectively and $\sigma\_{B, rel}$ is the relative background uncertainty, set at $30\%$.
+Where $S$ and $B$ ard the signal and background yields respectively, and $\sigma_{B, rel}$ is the relative background uncertainty, set at $30\%$.
 Calculating the significance of a particular sample bin by bin allows for a trace of the significance to be plotted underneath in parallel to the main histogram.
-An important consideration to make is that negative significance values can be acquired from this method.
-This is not an issue as negative values are interpreted as zero within the analysis.
+An important consideration to make is that negative overall significance values can be acquired from this method.
+These are artefacts of the binomial expansion used in the calculation process and are subsequently interpreted as zero within the analysis.
 
 \subsubsection{Inputs}
 
 In order to have samples and backgrounds in the histograms there exists a class for inputs, defining them as objects with certain properties.
-The important ones for the purpose of the plots made in the analysis one defines:
+The important parameters that require definition in the construction of the input objects are:
 \begin{itemize}
-\item the inputs name
+\item the input's name
 \item the \texttt{.root} file with the data tree for the particular input
 \item the name of the tree within which the data can be found
 \item the colour one wants the input to show up as in the final histogram
 \item the label for the input as you want it to show up in the legend of the histogram
-\item the scaling factor for the data, set to the luminosity of the data
+\item the scaling factor for the data, set to the luminosity of the data ($L = 36.1$ fb$^{-1}$)
 \item the weight of the input, defined as a specific combination of values specific to each input.
 \end{itemize}
 
+\noindent The constructors for each of the desired inputs are contained with the file \texttt{my\_inputs.py}.
+This file is run in conjunction with the main file when producing the plots and determines the specific inputs used in the final histogram.
+
 \subsubsection{Variables}
 The variables plotted are themselves objects, constructed using the variable class. 
-In order to have stylistic control over the final histogram one has the ability to define certain properties of the variables.
+In order to have stylistic control over the final histogram, one has the ability to define certain properties of the variables.
 These include:
 \begin{itemize}
 \item the variable name as it appears in the \texttt{.root} file
@@ -212,8 +237,11 @@ These include:
 \item the range and number of bins you want in the plot.
 \end{itemize}
 
+\noindent The constructors for each of the variables plotted is contained in the file \texttt{my\_vars.py}.
+This file is also run in conjunction with the main file when producing plots and defines the particular variables plotted for each of the inputs in a specific histogram.
+
 \subsubsection{Defining signal regions}
-Perhaps the most important part of the framework is the environment within which the cuts and limitations can be placed on the variables being plotted.
+Perhaps the most important part of the framework is the environment within which the cuts and limitations are placed on the variables being plotted.
 These regions are defined by constructing objects of type 'region'.
 There are three main components to the regions used in the analysis discussed in this dissertation.
 The first of which is the name of the region, used in the name of the file when created and also printed as a subtitle in the plot.
@@ -221,10 +249,13 @@ The second definition to be made is a tuple including all of the cuts that the p
 The third definition is another tuple including a list of the 'n minus ones'.
 These can be used to add directional arrows showing the position and direction of a cut on a particular variable, or to apply cut on variables whilst plotting a different variable.
 
+Similarly to before, the constructors for the regions are included in the file \texttt{my\_regions\_WZ.py}.
+This file is also run in conjunction with the main file, dictating the particular cut combinations applied to the particular variables and inputs in the given histograms.
+
 \subsubsection{Running the software}
 Seeing as there are many components required before a plot can be constructed, many files must be run in parallel such that all of the information to make a single plot is available.
 Within the package there exists the file \texttt{run.py} containing all of the initiating commands for making the plots.
-In parallel, one must run the Python files containing the constructors for the variables, inputs, and regions being used, contained in a directory called \texttt{my\_configurations}.
+As previously mentioned, one must run the Python files containing the constructors for the variables, inputs, and regions being used, contained in a directory called \texttt{my\_configurations}.
 One can also include the systematics defined analogously to variables and inputs.
 Finally, one can apply \texttt{-j n} allowing for the programs to be run on \texttt{n} cores.
 This leaves the execution command for the production of variable histograms as shown below.
@@ -235,15 +266,15 @@ This leaves the execution command for the production of variable histograms as s
 
 \subsection{Y{\scshape ield Table} Framework}
 
-The Y{\scshape ieldTable} framework is responsible for calculating a the number of event yields from each input as well as the associated uncertainty with each yield value.
+The Y{\scshape ieldTable} framework is responsible for calculating the event yields from each input as well as the associated uncertainty with each yield value.
 The output of this is a \texttt{.tex} file with a table of results formatted as a LaTeX tabular environment.
 
 In order to run the script one must define:
 \begin{itemize}
-\item the directory in which the background and sample nTuples are stored
-\item the directory in which the data files are stored
+\item the directory in which the background and sample \texttt{.root} nTuples are stored
+\item the directory in which the data files are stored (these are the official CERN data files, not used in this analysis)
 \item a name for the output file, generally in the format \texttt{$<$name$>$.tex}
-\item the luminosity used in the analysis
+\item the luminosity used in the analysis, in this case, $L = 36.1$ fb$^{-1}$
 \item the label '3L', required to specify the tri-lepton analysis
 \item a boolean input of whether or not to analyse the data files.
 \end{itemize}
@@ -256,3 +287,4 @@ For each background and sample used a row is defined with the input's name.
 The nTuple for the particular input is opened and cycled through, counting all of the entries inside that satisfy the conditions defined in the individual cuts.
 Secondly, the uncertainty on the number of events counted is calculated and then written into the output file.
 Additionally, a row showing the total combined backgrounds with associated uncertainties for each column are included in the final output.
+The outputs of this procedure are referred to as yield tables and will be referred to as such throughout this dissertation.
