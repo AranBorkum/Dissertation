@@ -2,28 +2,47 @@
 % Setting up the page format and importing all relevant packages 	%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
-\documentclass[12pt, twosides]{report}   	
+\documentclass[11pt, twosides]{report}   	
 \usepackage{import} 
 \usepackage{feynman}
-\import{sections/}{packages.tex}
+\usepackage[utf8]{inputenc}
+\input{sections/packages.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Formatting the front page: Title, Author, etc...					%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
-\import{sections/}{frontPage.tex}
 \begin{document}
-\maketitle
-
+\input{sections/frontPage.tex}
+%\maketitle
 \pagenumbering{roman}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Declaring the abstract and formatting the page 				%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+\begin{center}
+\textbf{\large Abstract}
+\end{center}
+\addcontentsline{toc}{section}{Abstract}
+\input{sections/abstract.tex}
 
-\newpage
-\import{sections/}{abstract.tex}
-\fancyhead[r]{ABSTRACT}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Preface/Declaration of the Dissertation		 				%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+
+\section*{Preface}
+\addcontentsline{toc}{section}{Preface}
+\input{sections/preface.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Acknowledgements for the Dissertation		 				%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+\addcontentsline{toc}{section}{Acknowledgments}
+\section*{Acknowledgments}
+\input{sections/Acknowledgments.tex}
+
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Tables of contents and list of tables and figures 				%
@@ -41,22 +60,6 @@
 \listoftables
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% Preface/Declaration of the Dissertation		 				%
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-
-\clearpage
-\addcontentsline{toc}{section}{Preface}
-\chapter*{Preface}
-\import{sections/}{preface.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% Acknowledgements for the Dissertation		 				%
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-
-\addcontentsline{toc}{section}{Acknowledgments}
-\chapter*{Acknowledgments}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Alteration of page formatting; purely stylistic				 	%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
@@ -64,32 +67,43 @@
 \pagenumbering{arabic}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% Introduction to the Dissertation			 				%
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-
-\chapter{Introduction}
-\import{sections/}{introduction.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Theory and Background to the topic of the Dissertation		 	%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
-\chapter{Theory}
-\import{sections/}{theory.tex}
+\chapter{Introduction and Theory}
+\label{chap:intro}
+\input{sections/theory.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% Analysis method for the procedure in the Dissertation		 	%
+% Experimental Apparatus 							 	%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
-\chapter{Analysis Methodology}
-\import{sections/}{method.tex}
+\chapter{Apparatus and Software}
+\label{chap:tools}
+\input{sections/apparatus.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Backgrounds for the analysis in the Dissertation			 	%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
-\chapter{Backgrounds}
-\import{sections/}{backgrounds.tex}
+%\chapter{Backgrounds}
+%\input{sections/backgrounds.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Analysis method for the procedure in the Dissertation		 	%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+\chapter{Analysis and Results}
+\label{chap:analysis}
+\input{sections/method.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Conclusions of the Dissertation						 	%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+\chapter{Conclusion}
+\label{chap:conc}
+\input{sections/conclusion.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Formatting the bibliography; constructed using bibtex 		 	%
@@ -108,9 +122,18 @@
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Standard Model Lagrangians for electroweak explanation		%
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-\chapter{Standard Model Lagrangians}
-\label{app:lagrangians}
-\import{sections/}{Appendix_Lagrangians.tex}
+
+\chapter{N-1 plots for on shell analysis}
+\label{app:n-1onZ}
+\input{sections/Appendix_nminusoenson.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Standard Model Lagrangians for electroweak explanation		%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+\chapter{N-1 plots for off shell analysis}
+\label{app:n-1offZ}
+\input{sections/Appendix_nminusoensoff.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Tables that are not important in the main text		 		 	%
@@ -118,19 +141,15 @@
 
 \chapter{Tables}
 \label{app:tables}
-\import{sections/}{Appendix_tables.tex}
+\input{sections/Appendix_tables.tex}
 
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% List of abbreviations									%
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
-\chapter{Abriviations}
-\label{app:abriviations}
-\import{sections/}{Appendix_Abriviations.tex}
 
-\appendix
-\renewcommand{\thechapter}{\Roman{chapter}}
-\chapter{balls}
-\import{practice/}{practice}
+
+
+
+
+
+
 
 \end{document}
